@@ -41,6 +41,7 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.loadbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +49,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(677, 43);
+            this.button1.Location = new System.Drawing.Point(503, 43);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 32);
             this.button1.TabIndex = 0;
@@ -151,11 +152,22 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // loadbtn
+            // 
+            this.loadbtn.Location = new System.Drawing.Point(634, 43);
+            this.loadbtn.Name = "loadbtn";
+            this.loadbtn.Size = new System.Drawing.Size(134, 32);
+            this.loadbtn.TabIndex = 16;
+            this.loadbtn.Text = "Open in browser";
+            this.loadbtn.UseVisualStyleBackColor = true;
+            this.loadbtn.Click += new System.EventHandler(this.loadbtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.loadbtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
@@ -191,6 +203,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button loadbtn;
     }
 }
 

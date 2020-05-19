@@ -16,7 +16,7 @@ namespace Lab7
     {
         private FigureSettings settings;
         private readonly SvgService svgService = new SvgService();
-
+        string filepath = System.IO.Path.GetFileNameWithoutExtension(Application.ExecutablePath) + ".svg";
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace Lab7
         {
             using (Graphics gr = pictureBox1.CreateGraphics())
             {
-                var rectangleSvg = svgService.RectangleToSVG(settings, pictureBox1.Width, pictureBox1.Height);
+                var rectangleSvg = svgService.RectangleToSVG(settings, pictureBox1.Width, pictureBox1.Height, filepath);
                 svgService.RenderRectangle(gr, rectangleSvg);
             }
         }
@@ -66,6 +66,15 @@ namespace Lab7
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
             settings.Dimensions.Height = Convert.ToInt32(numericUpDown2.Value);
+        }
+
+       
+        private void loadbtn_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(filepath))
+            {
+                System.Diagnostics.Process.Start(filepath);
+            }
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using System.Drawing;
+using System.IO;
 using Svg;
 
 namespace Lab7
 {
     public class SvgService
     {
+        
+
         private Point getTopLeft(FigureSettings settings, int width, int height)
         {
             return new Point(
@@ -12,7 +15,7 @@ namespace Lab7
                 (height - settings.Dimensions.Height) / 2
             );
         }
-        public SvgDocument RectangleToSVG(FigureSettings settings, int width, int height)
+        public SvgDocument RectangleToSVG(FigureSettings settings, int width, int height, string filepath)
         {
             SvgDocument svg = new SvgDocument();
             svg.Width = width;
@@ -44,7 +47,7 @@ namespace Lab7
 
             svg.Children.Add(defs);
             svg.Children.Add(rectangle);
-
+            File.WriteAllText(filepath, svg.GetXML());
             return svg;
         }
 
